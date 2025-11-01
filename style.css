@@ -1,0 +1,106 @@
+/* --- Custom Font Setup (Inter) --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9fafb; /* Light background similar to image */
+}
+
+/* --- Tailwind Overrides (Custom Colors) --- */
+/* --- Custom Font Setup (Inter) --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9fafb; /* Light background similar to image */
+}
+
+/* --- Tailwind Overrides (Custom Colors) --- */
+/* Custom color for the main accent (Blue) */
+.text-accent { color: #007cbf; } 
+.bg-accent { background-color: #007cbf; }
+.border-accent { border-color: #007cbf; }
+
+/* Ensure the main container doesn't get too wide on large screens */
+.container-xl {
+    max-width: 1280px;
+}
+
+/* Responsive Navbar link hover effect */
+.nav-link:hover {
+    color: #007cbf;
+}
+/* Style for the active tab when using the new JavaScript functionality */
+.nav-link.active, .tab-button.active {
+    color: #007cbf !important;
+    /* Add a small underline effect for the active tab */
+    border-bottom: 2px solid #007cbf;
+    padding-bottom: 4px;
+}
+
+
+/* Custom style for the profile picture border */
+.profile-border {
+    border: 4px solid #e0f2f1; /* Light base border */
+    box-shadow: 0 0 0 8px #0073bf20; /* Subtle outer glow using the accent color */
+}
+
+/* Style for the timeline circles */
+.timeline-dot {
+    position: absolute;
+    left: -12px;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    background-color: #007cbf; /* Accent color */
+    border-radius: 50%;
+}
+
+/* Custom scrollbar styling (optional, but good for aesthetics) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 10px;
+}
+/* Custom color for the main accent (Blue) */
+.text-accent { color: #007cbf; } 
+.bg-accent { background-color: #007cbf; }
+.border-accent { border-color: #007cbf; }
+
+/* Ensure the main container doesn't get too wide on large screens */
+.container-xl {
+    max-width: 1280px;
+}
+
+/* Responsive Navbar link hover effect */
+.nav-link:hover {
+    color: #007cbf;
+}
+
+/* Custom style for the profile picture border */
+.profile-border {
+    border: 4px solid #e0f2f1; /* Light base border */
+    box-shadow: 0 0 0 8px #0073bf20; /* Subtle outer glow using the accent color */
+}
+
+/* Style for the timeline circles */
+.timeline-dot {
+    position: absolute;
+    left: -12px;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    background-color: #007cbf; /* Accent color */
+    border-radius: 50%;
+}
+
+/* Custom scrollbar styling (optional, but good for aesthetics) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 10px;
+}
