@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isha Kulkarni's Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons (LinkedIn, GitHub, etc.) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link to Custom Styles -->̉̉
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="text-gray-800">
+
+    <!-- Header / Navigation Bar -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md transition-all duration-300">
+        <div class="container-xl mx-auto flex justify-between items-center py-4 px-6 md:px-8">
+            <!-- Logo/Name Link - Clicking this redirects to Home -->
+            <a href="#" data-section="home" class="nav-link tab-button text-2xl font-bold text-gray-900">Isha Kulkarni</a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8 text-lg font-medium">
+                <a href="#" data-sect̉̉̉̉̉̉̉ion="home" class="nav-link tab-button text-gray-600 transition-colors active">Home</a>
+                <a href="#" data-section="about" class="nav-link tab-button text-gray-600 transition-colors">About</a>
+                <a href="#" data-section="resume" class="nav-link tab-button text-gray-600 transition-colors">Resume</a>
+                <a href="#" data-section="projects" class="nav-link tab-button text-gray-600 transition-colors">Projects</a>
+                <a href="#" data-section="contact" class="nav-link tab-button text-gray-600 transition-colors">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="mobile-menu-button" class="md:hidden text-2xl text-gray-800">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu Dropdown -->
+        <nav id="mobile-menu" class="hidden md:hidden bg-white shadow-lg border-t border-gray-100">
+            <a href="#" data-section="home" class="tab-button block py-3 px-6 text-gray-700 hover:bg-gray-50 transition-colors">Home</a>
+            <a href="#" data-section="about" class="tab-button block py-3 px-6 text-gray-700 hover:bg-gray-50 transition-colors">About</a>
+            <a href="#" data-section="resume" class="tab-button block py-3 px-6 text-gray-700 hover:bg-gray-50 transition-colors">Resume</a>
+            <a href="#" data-section="projects" class="tab-button block py-3 px-6 text-gray-700 hover:bg-gray-50 transition-colors">Projects</a>
+            <a href="#" data-section="contact" class="tab-button block py-3 px-6 text-gray-700 hover:bg-gray-50 transition-colors">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <main class="pt-20 container-xl mx-auto px-6">
+
+        <!-- All content sections are now children of the main wrapper -->
+        
+        <!-- 1. HOME / HERO SECTION (Default visible page) -->
+        <section id="content-home" class="page-section">
+            <div class="py-16 md:py-24">
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-12">
+                    
+                    <!-- Left Content -->
+                    <div class="md:w-3/5 space-y-4">
+                        <h1 class="text-2xl md:text-4xl font-bold text-gray-900 leading-tight">
+                            Hi, I'm <span class="text-accent">Isha Kulkarni</span>
+                        </h1>
+                        <h2 class="text-2xl md:text-3xl font-semibold text-gray-700">MSc in Computer Science @ UoS</h2>
+                        <h3 class="text-xl font-medium text-accent">AI/ML, Generative AI Enthusiast | Developer| Researcher</h3>
+                        <p class="text-xl text-gray-600 max-w-lg pt-2">
+                            Passionate about leveraging technology to solve real-world problems. Experienced in Python, AI/ML development.
+                        </p>
+                        <div class="flex space-x-4 pt-4">
+                            <a href="#" data-section="projects" class="tab-button px-6 py-3 bg-accent text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors">My Work</a>
+                            <a href="#" data-section="contact" class="tab-button px-6 py-3 border border-accent text-accent font-semibold rounded-lg hover:bg-blue-50 transition-colors">Contact Me</a>
+                        </div>
+                    </div>
+
+                    <!-- Right Image -->
+                    <div class="md:w-2/5 flex justify-center md:justify-end">
+                        <!-- Placeholder image, replace with your own URL -->
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden profile-border">
+                            <img src="IMG_0787.jpeg" alt="Profile picture of Isha Kulkarni" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LATEST UPDATES (TIMELINE) SUB-SECTION - Now integrated directly below Hero -->
+                <div class="mt-20">
+                    <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Latest Updates</h2>
+                    <div class="max-w-3xl mx-auto">
+                        <div class="relative pl-6 md:pl-8 border-l-4 border-teal-100">
+                            <!-- Timeline Item 1 -->
+                            <div class="relative mb-8">
+                                <!-- <div class="timeline-dot bg-teal-100"> </div> -->
+                                <p class="text-lg text-gray-800"> - Pursuing Master's in Computer Science at University of Southampton- Sept 25</p>
+                                <!-- <p class="text-sm text-gray-500 mt-1">
+                                    <span class="text-accent font-semibold"> Sept 25</span> 
+                                </p> -->
+                                <p class="text-lg text-gray-800"> - Software Developer at Persistent Systems Ltd.- Aug 25</p>
+                                <!-- <p class="text-sm text-gray-500 mt-1">
+                                    <span class="text-accent font-semibold"> Sept 25</span> | UoS
+                                </p> -->
+                            </div>
+                        </div>
+                        <div class="text-center mt-10">
+                            <a href="#" data-section="resume" class="tab-button text-accent font-semibold hover:underline ">View Full Resume <i class="fas fa-arrow-right ml-1 text-sm"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. ABOUT SECTION (Restructured to two-column layout) -->
+        <section id="content-about" class="page-section hidden py-16 md:py-24">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">About Me</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
+                
+                <!-- LEFT COLUMN: Profile Card and Fun Facts -->
+                <div class="lg:col-span-1 space-y-8">
+                    <!-- Profile Card -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 text-center">
+                        <div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-2 border-accent p-0.5">
+                            <img src="IMG_0787.jpeg" alt="Isha Kulkarni" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900">Isha Kulkarni</h4>
+                        <p class="text-gray-600">MSc in Computer Science</p>
+                        <p class="text-gray-500 text-sm">University of Southampton</p>
+                        
+                        <div class="flex justify-center space-x-4 mt-4 pt-4 border-t border-gray-100">
+                            <a href="https://github.com/ishakulkarni011" target="_blank" class="text-gray-600 hover:text-accent transition-colors"><i class="fab fa-github fa-lg"></i></a>
+                            <a href="https://www.linkedin.com/in/isha-kulkarni-549803193/" target="_blank" class="text-gray-600 hover:text-accent transition-colors"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                            <!-- Add more social links as needed -->
+                            <a href="mailto:ishakulkarnimscs@gmail.com" class="text-gray-600 hover:text-accent transition-colors"title="Gmail"><i class="fas fa-envelope fa-lg"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Fun Facts Card -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                        <h4 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                            <i class="fas fa-laugh-squint text-accent mr-3"></i> Fun Facts
+                        </h4>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-center"><i class="fas fa-cogs text-accent mr-3"></i> Developed SASVA AI to automate test script creation through Generative AI.</li>
+                            <li class="flex items-center"><i class="fas fa-users text-accent mr-3"></i> A professional Bharatnatyam dancer, recently performed my first recital in the UK.</li>
+                            <!-- <li class="flex items-center"><i class="fas fa-hand-holding-heart text-accent mr-3"></i> Mentor for FIRST Robotics</li>
+                            <li class="flex items-center"><i class="fas fa-video text-accent mr-3"></i> Content creator & video editor</li> -->
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN: Professional Bio and Interests -->
+                <div class="lg:col-span-2 bg-white p-8 rounded-xl shadow-lg border border-gray-100 space-y-8">
+                    
+                    <!-- Background Section -->
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-bold text-gray-900 flex items-center border-b pb-2">
+                            <i class="fas fa-graduation-cap text-accent mr-3"></i> Background
+                        </h3>
+                        <p class="text-gray-600">
+                            I'm currently pursuing my Master’s in Computer Science at the University of Southampton, specializing in Machine Learning, and AI. My journey in technology began in India, where I completed my undergraduate degree in Information Technology. 
+                            Since then, gaining a strong foundation in algorithms, data structures, databases, and software engineering. During this time, I also published a research paper on detecting malicious activities using AI, which sparked my interest in applied machine learning.
+                            At Persistent Systems, I worked on developing LLM-driven automation frameworks and Selenium-based testing solutions, gaining experience in prompt engineering, AI agent design, and scalable automation workflows. These experiences have allowed me to explore the intersection of AI, software engineering, and intelligent automation and I’m passionate about building systems that combine innovation with real-world impact.
+                        </p>
+                        
+                        <!-- Quote Block
+                        <blockquote class="border-l-4 border-accent bg-blue-50/50 p-4 text-gray-700 italic rounded-r-lg">
+                            "I've always been a builder and a tinkerer at heart. There's something magical about taking an idea and turning it into something tangible."
+                        </blockquote> -->
+
+                        <!-- <p class="text-gray-600">
+                            At my core, though, I've always been a builder and a tinkerer. I grew up making things—DIY circuits, a 2-axis gimbal, a Bluetooth speaker from scratch—and during my undergrad, I was part of our college robotics team, where we built autonomous bots and worked on vision-based challenges. That really deepened my interest in real-time systems and problem-solving under constraints.
+                        </p> -->
+                    </div>
+
+                    <!-- Academic Interests Section -->
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-bold text-gray-900 flex items-center border-b pb-2">
+                            <i class="fas fa-brain text-accent mr-3"></i> Academic Interests
+                        </h3>
+                        <p class="text-gray-600">
+                            My passion lies at the intersection of <span class="text-accent font-semibold">computer science, machine learning, artificial intelligence and Generative AI</span>with a strong foundation in algorithms, software development, and machine learning. I focus on building intelligent systems and AI-driven agents that can solve complex problems, analyze large datasets, and bridge the gap between research and real-world deployment.
+                        </p>
+
+                    </div>
+                    
+                    <!-- Beyond Academics Section -->
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-bold text-gray-900 flex items-center border-b pb-2">
+                            <i class="fas fa-globe text-accent mr-3"></i> Beyond Academics
+                        </h3>
+                        <p class="text-gray-600">
+                            Outside of pure tech, my life is driven by discipline, focus, and a creative spirit. I am a dedicated Bharatnatyam dancer, having performed the classical Indian art form in both India and the UK, demonstrating intense focus and a strong commitment to artistic expression on an international stage. I am also a certified mountaineer, a pursuit that speaks to my physical endurance, mental toughness, and ability to execute complex plans under pressure.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. RESUME / CAREER TIMELINE SECTION -->
+        <section id="content-resume" class="page-section hidden py-16 md:py-24 bg-white rounded-xl shadow-lg">
+            <h2 class="text-4xl font-bold text-center mb-6 text-gray-900">My Career Timeline</h2>
+            <div class="text-center mb-12">
+                <a href="Isha_Kulkarni_Resume.pdf" download class="inline-flex items-center bg-accent text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 transition-colors">
+                    Download Full Resume <i class="fas fa-download ml-2"></i>
+                </a>
+            </div>
+
+            <!-- Education -->
+            <h3 class="text-3xl font-bold mb-6 text-gray-900 border-b pb-2">Education</h3>
+            <div class="space-y-8">
+                <!-- Education Item 1 -->
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-xl font-semibold text-gray-900">University of Southampton </p>
+                        <p class="text-blue-400">Master of Science in Computer Science</p>
+                    </div>
+                    <p class="text-sm text-accent font-medium whitespace-nowrap pt-1">Sept 2025 – Ongoing</p>
+                </div>
+                <!-- Education Item 2 -->
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-xl font-semibold text-gray-900">Savitribai Phule Pune University, India</p>
+                        <p class="text-blue-400">Bachelor of Engineering in Information Technology</p>
+                    </div>
+                    <p class="text-sm text-accent font-medium whitespace-nowrap pt-1">Aug 2019 – Jun 2023</p>
+                </div>
+            </div>
+
+            <!-- Professional Experience -->
+            <h3 class="text-3xl font-bold mt-12 mb-6 text-gray-900 border-b pb-2">Professional Experience</h3>
+            <div class="space-y-8">
+                <!-- Experience Item 1 -->
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-xl font-semibold text-gray-900">Python Generative AI Developer</p>
+                        <p class="text-blue-400">Persistent Systems Ltd. |Pune, India</p>
+                    </div>
+                    <p class="text-sm text-accent font-medium whitespace-nowrap pt-1">Aug 2023 – July 2025</p>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-xl font-semibold text-gray-900">Python Developer Intern</p>
+                        <p class="text-blue-400">Revyamp Consultancy |Pune, India</p>
+                    </div>
+                    <p class="text-sm text-accent font-medium whitespace-nowrap pt-1">Aug 2023 – July 2025</p>
+                    
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. RESEARCH & PROJECTS SECTION -->
+        <section id="content-projects" class="page-section hidden py-16 md:py-24">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Projects</h2>
+            
+            <!-- Research Section -->
+            <!-- <h3 class="text-3xl font-bold mb-6 text-gray-900">Research</h3>
+            <div class="grid grid-cols-1 gap-6 mb-12">
+                <!- Research Card 1 -->
+                <!-- <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
+                    <h4 class="text-xl font-bold text-gray-900 mb-2">Robotic Connector Manipulation - IIWA 14 Robot with NIST Board</h4>
+                    <p class="text-sm text-gray-500 mb-3">Advisor: Dr. S K Gupta, RRoS Lab | Spring/2025</p>
+                    <p class="text-gray-600 mb-4">
+                        Built simulation environment in NVIDIA Isaac Sim 4.5 for IIWA 14 to perform plug/unplug operations. Developed RL-based control policies and integrated computer vision for connector detection and pose estimation. -->
+                    <!-- </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs font-semibold rounded-full bg-teal-100 text-teal-800">NVIDIA Isaac Sim 4.5</span>
+                        <span class="px-3 py-1 text-xs font-semibold rounded-full bg-teal-100 text-teal-800">Reinforcement Learning</span>
+                        <span class="px-3 py-1 text-xs font-semibold rounded-full bg-teal-100 text-teal-800">Computer Vision</span>
+                        <span class="px-3 py-1 text-xs font-semibold rounded-full bg-teal-100 text-teal-800">IIWA 14 Robot</span>
+                    </div>
+                </div> --> 
+            <!-- </div> -->
+
+            <!-- Projects Section -->
+            <!-- <h3 class="text-3xl font-bold mb-6 text-gray-900">Projects</h3> -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Project Card 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
+                    <h4 class="text-xl font-bold text-gray-900 mb-2">GenAI-Based UI Testing Solution</h4>
+                    <p class="text-gray-600 mb-4">Developed a Python and Flask-based tool using Generative AI and LLMs to automatically generate UI testing scripts from object repositories and scenarios. This reduced manual script creation time by 50% and improved the efficiency and scalability of UI testing across multiple frameworks.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">LLMs</span>
+                        <span class="px-3 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">RAG</span>
+                    </div>
+                </div>
+                
+                <!-- Project Card 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
+                    <h4 class="text-xl font-bold text-gray-900 mb-2">Malicious Activity Detection on Social Media</h4>
+                    <p class="text-gray-600 mb-4">Built a Python-based ML system using NLP to detect spam, fake accounts, and hate speech, achieving high accuracy and enabling real-time monitoring for online safety.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Python</span>
+                        <span class="px-3 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">NLP</span>
+                        <span class="px-3 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">ML</span>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
+                    <h4 class="text-xl font-bold text-gray-900 mb-2">Test Script MigraRon Framework </h4>
+                    <p class="text-gray-600 mb-4">an automated Python framework using Generative AI and LLMs to convert legacy Selenium scripts into modular Playwright tests, integrating REST APIs for CI/CD validation and reducing manual migration effort by over 60%.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-800">REST APIs</span>
+                        <span class="px-3 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-800">Python</span>
+                        <span class="px-3 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-800">Fine-Tuning</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. CONTACT SECTION -->
+        <section id="content-contact" class="page-section hidden py-16 md:py-24">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Get In Touch</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Feel free to reach out for collaborations or just to say hello! I'll try my best to get back to you.
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Left: Contact Information -->
+                <div class="bg-white p-8 rounded-xl shadow-lg space-y-8">
+                    <h3 class="text-2xl font-bold text-gray-900">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-envelope text-accent text-xl mt-1"></i>
+                            <div>
+                                <p class="text-gray-500">Email me at</p>
+                                <a href="mailto:ishakulkarnimscs@gmail.com" class="text-lg text-gray-800 font-medium hover:text-accent">ishakulkarnimscs@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-map-marker-alt text-accent text-xl mt-1"></i>
+                            <div>
+                                <p class="text-gray-500">Find me at</p>
+                                <p class="text-lg text-gray-800 font-medium">University of Southampton</p>
+                                <p class="text-gray-600"> Southampton,SO17 1BJ, UK</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-gray-900 pt-4">Connect With Me</h3>
+                    <div class="flex space-x-6">
+                        <a href="https://www.linkedin.com/in/isha-kulkarni-549803193/" target="_blank" class="text-gray-600 hover:text-accent transition-colors"><i class="fab fa-linkedin-in fa-2x"></i></a>
+                        <a href="https://github.com/ishakulkarni011" target="_blank" class="text-gray-600 hover:text-accent transition-colors"><i class="fab fa-github fa-2x"></i></a>
+                        <a href="mailto:ishakulkarnimscs@gmail.com" class="text-gray-600 hover:text-accent transition-colors"title="Gmail"><i class="fas fa-envelope fa-lg"></i></a>
+                    </div>
+                </div>
+
+                <!-- Right: Send Me a Message (Form) -->
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Send Me a Message</h3>
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                            <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm p-3 focus:ring-accent focus:border-accent" placeholder="Your Name" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" id="email" name="email" class="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm p-3 focus:ring-accent focus:border-accent" placeholder="you@example.com" required>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
+                            <input type="text" id="subject" name="subject" class="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm p-3 focus:ring-accent focus:border-accent" placeholder="Project Inquiry" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                            <textarea id="message" name="message" rows="5" class="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm p-3 focus:ring-accent focus:border-accent" placeholder="Your message..." required></textarea>
+                        </div>
+                        <button type="submit" class="w-full inline-flex justify-center items-center px-6 py-3 bg-accent text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors">
+                            Send Message <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                        <p id="formStatus" class="text-center text-sm pt-2 hidden"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-accent py-4 mt-16">
+        <div class="container-xl mx-auto px-6 flex justify-between items-center text-white text-sm">
+            <p>&copy; 2025 Isha Kulkarni. All rights reserved.</p>
+            <div class="flex space-x-4">
+                <a href="https://github.com/ishakulkarni011" class="hover:text-gray-200" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/isha-kulkarni-549803193/" class="hover:text-gray-200" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:ishakulkarnimscs@gmail.com" class="over:text-gray-200"title="Gmail"><i class="fas fa-envelope fa-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Link to Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
