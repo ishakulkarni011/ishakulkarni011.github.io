@@ -1,10 +1,14 @@
 // --- JAVASCRIPT FOR SINGLE PAGE APPLICATION (SPA) BEHAVIOR ---
-// --- JAVASCRIPT FOR SINGLE PAGE APPLICATION (SPA) BEHAVIOR ---
 
 // 1. Mobile Menu Toggle
 function toggleMenu() {
     const menu = document.getElementById('mobile-menu');
+    const button = document.getElementById('mobile-menu-button');
+    const isHidden = menu.classList.contains('hidden');
+    
     menu.classList.toggle('hidden');
+    // Update ARIA attribute for accessibility
+    button.setAttribute('aria-expanded', !isHidden);
 }
 document.getElementById('mobile-menu-button').addEventListener('click', toggleMenu);
 
@@ -100,4 +104,3 @@ document.addEventListener('DOMContentLoaded', () => {
     showSection('home');
     updateActiveLink('home');
 });
-// --- JAVASCRIPT FOR SINGLE PAGE APPLICATION (SPA) BEHAVIOR ---
