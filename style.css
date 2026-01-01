@@ -11,7 +11,7 @@ Base + Theme Variables
 :root{
   --primary-color: #111827;
   --secondary-color: #f3f4f6;
-  --accent: #ffb347; /* reference-like accent */
+  --accent: #ffb347;
   --border: rgba(0,0,0,0.12);
   --glass: rgba(255,255,255,0.65);
   --card-bg: rgba(255,255,255,0.72);
@@ -36,10 +36,11 @@ html, body{
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px;
+  padding-top: 120px; /* space for navbar */
 }
 
 @media(max-width: 425px){
-  .main-container{ padding: 18px; }
+  .main-container{ padding: 18px; padding-top: 110px; }
 }
 
 hr{
@@ -49,10 +50,6 @@ hr{
   margin: 18px 0;
 }
 
-#main-content{
-  padding-top: 110px;
-}
-
 section{
   scroll-margin-top: 120px;
 }
@@ -60,7 +57,7 @@ section{
 .section-wrap{
   max-width: 1100px;
   margin: 0 auto;
-  padding: 38px 10px;
+  padding: 34px 10px;
 }
 
 /* Shared surfaces */
@@ -83,10 +80,14 @@ Navbar (glass + sidebar)
   top: 0; left: 0;
   width: 100%;
   z-index: 50;
-  background: transparent;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(0,0,0,0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
+}
+
+.darktheme .navbar{
+  background: rgba(7, 12, 24, 0.55);
 }
 
 .nav-content{
@@ -100,11 +101,11 @@ Navbar (glass + sidebar)
 }
 
 .signature-text{
-  min-width: 90px;
   font-size: 1.7rem;
   font-weight: 900;
   text-decoration: none;
   color: var(--accent);
+  letter-spacing: -0.02em;
 }
 
 .nav-center-container{
@@ -133,16 +134,12 @@ Navbar (glass + sidebar)
   transition: 0.18s ease;
 }
 
-.nav-links a:hover{
-  color: var(--accent);
-}
-
+.nav-links a:hover{ color: var(--accent); }
 .nav-links a.active{
   color: var(--accent);
   text-shadow: 0 0 14px rgba(255,179,71,0.25);
 }
 
-/* Right icons */
 .social-icons{
   display: flex;
   gap: 10px;
@@ -154,11 +151,7 @@ Navbar (glass + sidebar)
   align-items: center;
 }
 
-.social-icons-image{
-  position: relative;
-  display: inline-block;
-}
-
+.social-icons-image{ position: relative; display: inline-block; }
 .social-icons-image::after{
   content: attr(data-name);
   position: absolute;
@@ -188,10 +181,7 @@ Navbar (glass + sidebar)
   transition: transform 0.18s ease, color 0.18s ease;
 }
 
-.icon:hover{
-  transform: scale(1.1);
-  color: var(--accent);
-}
+.icon:hover{ transform: scale(1.1); color: var(--accent); }
 
 .theme-btn{
   background: transparent;
@@ -211,6 +201,8 @@ Navbar (glass + sidebar)
 .close-sidebar-button{
   display: none;
   cursor: pointer;
+  color: var(--primary-color);
+  font-size: 20px;
 }
 
 #overlay{ display: none; }
@@ -232,7 +224,7 @@ Navbar (glass + sidebar)
     padding: 30px 20px;
     border-radius: 0 18px 18px 0;
     background: var(--secondary-color);
-    transition: 0.5s ease;
+    transition: 0.35s ease;
     z-index: 60;
     gap: 18px;
   }
@@ -287,8 +279,8 @@ Home
 
 .image-container{
   margin: 22px auto 0 auto;
-  padding: 6px;
-  border-radius: 999px;
+  padding: 8px;
+  border-radius: 22px;
   width: fit-content;
   background: var(--glass);
   border: 1px solid var(--border);
@@ -299,8 +291,8 @@ Home
 
 .personal-pic{
   width: 100%;
-  max-width: 360px;
-  border-radius: 16px;
+  max-width: 380px;
+  border-radius: 18px;
   object-fit: cover;
   display: block;
 }
@@ -378,9 +370,7 @@ Skills
   .skills-grid{ grid-template-columns: 1fr; }
 }
 
-.skill-box{
-  padding: 16px;
-}
+.skill-box{ padding: 16px; }
 .skill-box h3{
   color: var(--accent);
   font-weight: 950;
@@ -403,7 +393,7 @@ Skills
 }
 
 /* =========================
-Experience (Screenshot-style)
+Experience
 ========================= */
 .exp-title{
   text-align: center;
@@ -443,10 +433,7 @@ Experience (Screenshot-style)
   padding: 26px 0;
 }
 
-.exp-date{
-  display: flex;
-  justify-content: flex-end;
-}
+.exp-date{ display: flex; justify-content: flex-end; }
 
 .exp-date-pill{
   width: min(420px, 100%);
@@ -468,9 +455,7 @@ Experience (Screenshot-style)
   justify-self: center;
   z-index: 2;
 }
-.darktheme .exp-dot{
-  background: #e5e7eb;
-}
+.darktheme .exp-dot{ background: #e5e7eb; }
 
 .exp-card{
   width: min(540px, 100%);
@@ -482,7 +467,7 @@ Experience (Screenshot-style)
 }
 
 .exp-role{
-  font-size: 1.55rem;
+  font-size: 1.45rem;
   font-weight: 950;
   margin-bottom: 8px;
 }
@@ -571,7 +556,7 @@ Experience (Screenshot-style)
 }
 
 /* =========================
-Projects (Screenshot-style)
+Projects
 ========================= */
 .projects-title{
   text-align: center;
@@ -601,9 +586,7 @@ Projects (Screenshot-style)
   transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
 }
 
-.filter-btn:hover{
-  transform: translateY(-2px);
-}
+.filter-btn:hover{ transform: translateY(-2px); }
 
 .filter-btn.active{
   background: var(--accent);
@@ -625,7 +608,10 @@ Projects (Screenshot-style)
 .project-card2{
   padding: 22px;
   border-radius: 20px;
+  transition: transform 0.18s ease;
 }
+
+.project-card2:hover{ transform: translateY(-4px); }
 
 .project-title2{
   font-size: 1.8rem;
@@ -703,11 +689,6 @@ Projects (Screenshot-style)
   text-align: left;
 }
 
-.project-card2:hover{
-  transform: translateY(-4px);
-  transition: transform 0.18s ease;
-}
-
 /* =========================
 Education
 ========================= */
@@ -761,9 +742,7 @@ Contact
   .grid-2{ grid-template-columns: 1fr; }
 }
 
-.contact-card{
-  padding: 18px;
-}
+.contact-card{ padding: 18px; }
 
 .card-heading{
   font-weight: 950;
@@ -844,9 +823,7 @@ Contact
   transition: transform 0.15s ease;
 }
 
-.btn-solid:hover{
-  transform: translateY(-2px);
-}
+.btn-solid:hover{ transform: translateY(-2px); }
 
 .form-status{
   min-height: 18px;
