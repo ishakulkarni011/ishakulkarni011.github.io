@@ -1,106 +1,145 @@
-// --- JAVASCRIPT FOR SINGLE PAGE APPLICATION (SPA) BEHAVIOR ---
+// =========================
+// Smooth scroll + close sidebar on mobile
+// =========================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    const targetId = this.getAttribute("href");
+    const target = document.querySelector(targetId);
+    if (!target) return;
 
-// 1. Mobile Menu Toggle
-function toggleMenu() {
-    const menu = document.getElementById('mobile-menu');
-    const button = document.getElementById('mobile-menu-button');
-    const isHidden = menu.classList.contains('hidden');
-    
-    menu.classList.toggle('hidden');
-    // Update ARIA attribute for accessibility
-    button.setAttribute('aria-expanded', !isHidden);
-}
-document.getElementById('mobile-menu-button').addEventListener('click', toggleMenu);
-
-// Function to handle showing the correct content section
-function showSection(sectionId) {
-    // 1. Hide all content sections
-    document.querySelectorAll('.page-section').forEach(section => {
-        section.classList.add('hidden');
-    });
-
-    // 2. Show the requested section
-    const targetSection = document.getElementById(`content-${sectionId}`);
-    if (targetSection) {
-        targetSection.classList.remove('hidden');
-        // Scroll to the top of the main content area (below the navbar)
-        window.scrollTo(0, 0); 
-    }
-}
-
-// Function to update the active state of navigation links
-function updateActiveLink(sectionId) {
-    // Reset non-active links first
-    document.querySelectorAll('.tab-button').forEach(link => {
-        link.classList.remove('active', 'text-accent');
-        link.classList.add('text-gray-600');
-    });
-    
-    // Reset the logo/name link active state (it's not a tab-button, but should not look 'active' unless on home)
-    document.querySelector('.text-gray-900[data-section="home"]').classList.remove('active');
-
-    // Find and set the active link(s) for the current section
-    document.querySelectorAll(`[data-section="${sectionId}"]`).forEach(link => {
-        // If it's a primary nav item (tab-button), use accent colors
-        if (link.classList.contains('tab-button')) {
-            link.classList.add('active', 'text-accent');
-            link.classList.remove('text-gray-600');
-        } 
-    });
-    
-    // Ensure the logo gets the active look when on the home section
-    if (sectionId === 'home') {
-        document.querySelector('.text-gray-900[data-section="home"]').classList.add('active');
-    }
-}
-
-// 3. Tab Navigation Event Listener
-// This listener targets all elements with data-section, including the logo and section buttons
-document.querySelectorAll('[data-section]').forEach(button => {
-    button.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const sectionId = this.getAttribute('data-section');
-        
-        showSection(sectionId);
-        updateActiveLink(sectionId);
-
-        // Close mobile menu after clicking a link
-        if (!document.getElementById('mobile-menu').classList.contains('hidden')) {
-            toggleMenu();
-        }
-    });
-});
-
-// 4. Simple Form Submission Simulation (Triggered after native HTML validation passes)
-document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    
-    // Check form validity (using HTML 'required')
-    if (!this.checkValidity()) {
-        return;
-    }
+    target.scrollIntoView({ behavior: "smooth" });
 
-    const formStatus = document.getElementById('formStatus');
-    formStatus.classList.remove('hidden');
-    
-    formStatus.textContent = 'Sending message...';
-    formStatus.classList.remove('text-red-500', 'text-green-500');
-    formStatus.classList.add('text-gray-500');
-
-    // Simulate API latency (1.5 seconds)
-    setTimeout(() => {
-        formStatus.textContent = 'Thank you! Your message has been sent successfully.';
-        formStatus.classList.remove('text-gray-500');
-        formStatus.classList.add('text-green-500');
-        // Clear the form fields
-        document.getElementById('contactForm').reset();
-    }, 1500); 
+    const sidebar = document.getElementById("sidebar-active");
+    if (sidebar && sidebar.checked) sidebar.checked = false;
+  });
 });
 
+// =========================
+// Footer year
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
+  const yearEl = document.getElementById("current-year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+});
 
-// 5. Initialize the app: Show the 'home' section when the page first loads
-document.addEventListener('DOMContentLoaded', () => {
-    showSection('home');
-    updateActiveLink('home');
+// =========================
+// Theme toggle (localStorage)
+// =========================
+function applyTheme(theme) {
+  document.body.classList.toggle("darktheme", theme === "dark");
+
+  const themeIcon = document.getElementById("themeIcon");
+  if (themeIcon) {
+    themeIcon.classList.toggle("fa-moon", theme !== "dark");
+    themeIcon.classList.toggle("fa-sun", theme === "dark");
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const storedTheme = localStorage.getItem("theme") || "dark";
+  applyTheme(storedTheme);
+
+  const toggleBtn = document.getElementById("themeToggle");
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+      const isDark = document.body.classList.contains("darktheme");
+      const newTheme = isDark ? "light" : "dark";
+      localStorage.setItem("theme", newTheme);
+      applyTheme(newTheme);
+    });
+  }
+});
+
+// =========================
+// Scroll spy: highlight active nav link
+// =========================
+function observeSections() {
+  const sections = document.querySelectorAll("main section[id]");
+  const navLinks = document.querySelectorAll(".nav-links a.nav-a");
+
+  if (!sections.length || !navLinks.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+
+      const id = entry.target.id;
+      navLinks.forEach(a => a.classList.remove("active"));
+
+      const activeLink = document.querySelector(`.nav-links a[href="#${id}"]`);
+      if (activeLink) activeLink.classList.add("active");
+    });
+  }, { root: null, threshold: 0.55 });
+
+  sections.forEach(sec => observer.observe(sec));
+}
+
+document.addEventListener("DOMContentLoaded", observeSections);
+
+// =========================
+// Experience "Details" toggle
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll(".exp-details-btn");
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const card = btn.closest(".exp-card");
+      const details = card.querySelector(".exp-details");
+
+      const isOpen = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!isOpen));
+      details.hidden = isOpen;
+    });
+  });
+});
+
+// =========================
+// Projects filter (All / SDE / ML)
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const projectCards = document.querySelectorAll(".project-card2");
+
+  if (!filterButtons.length || !projectCards.length) return;
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const filter = btn.getAttribute("data-filter");
+
+      filterButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      projectCards.forEach(card => {
+        const categories = (card.getAttribute("data-category") || "").split(" ");
+        const show = filter === "all" || categories.includes(filter);
+        card.style.display = show ? "block" : "none";
+      });
+    });
+  });
+});
+
+// =========================
+// Contact form simulation
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("formStatus");
+  if (!form || !status) return;
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) return;
+
+    status.textContent = "Sending message...";
+    status.classList.remove("ok", "err");
+    status.classList.add("pending");
+
+    setTimeout(() => {
+      status.textContent = "Thank you! Your message has been sent successfully.";
+      status.classList.remove("pending");
+      status.classList.add("ok");
+      form.reset();
+    }, 1200);
+  });
 });
