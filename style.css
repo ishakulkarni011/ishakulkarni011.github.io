@@ -689,6 +689,19 @@ Projects
   text-align: left;
 }
 
+.project-gh-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 0.9rem;
+  transition: opacity 0.15s ease;
+}
+.project-gh-link:hover{ opacity: 0.7; text-decoration: underline; }
+
 /* =========================
 Education
 ========================= */
