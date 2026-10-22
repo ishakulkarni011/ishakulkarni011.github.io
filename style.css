@@ -673,7 +673,13 @@ Projects
   background: rgba(255,255,255,0.04);
 }
 
+/* Show the label only when the preview image failed to load */
+.project-image.img-fallback .img-fallback-text{
+  display: block;
+}
+
 .img-fallback-text{
+  display: none;
   position: absolute;
   font-weight: 950;
   opacity: 0.55;
